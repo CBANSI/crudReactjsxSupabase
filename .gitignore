@@ -12,8 +12,11 @@ dist
 dist-ssr
 *.local
 
+<<<<<<< HEAD
 .env
 
+=======
+>>>>>>> a7753eaed94a9e991064a5f83ae4c822904986ed
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
