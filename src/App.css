@@ -1,0 +1,162 @@
+html, body, #root /* center the app page and card */
+:root {
+  --card-w: 520px;
+  --bg-dark: #0f2027;
+  --bg-dark2: #203a43;
+  --card-bg-dark: rgba(255,255,255,0.06);
+  --accent: #00b894;
+  --muted: #9aa4a4;
+}
+
+/* ensure root fills screen */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: flex-start; /* start at top so scroll works */
+  overflow-y: auto; /* enable vertical scrolling */
+  background-color: #0d0d0d; /* optional, dark theme */
+}
+
+/* page background for dark / light */
+.page.dark {
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark2));
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.page.light {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* center card */
+.center-card {
+  width: 100%;
+  max-width: var(--card-w);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* the card container */
+.card-inner {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.03));
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* top controls row */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.theme-btn, .signout-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.theme-btn {
+  background: var(--accent);
+  color: white;
+}
+
+.signout-btn {
+  background: #d63031;
+  color: white;
+}
+
+/* title */
+.title {
+  text-align: center;
+  margin: 6px 0 14px;
+  font-size: 24px;
+}
+
+/* form */
+.task-form { display: flex; flex-direction: column; gap: 8px; }
+.input { padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); background: transparent; color: inherit; }
+.textarea { min-height: 80px; resize: vertical; }
+
+/* labels & muted text */
+.label { font-size: 14px; margin-top: 6px; color: var(--muted); }
+
+/* button styles */
+.primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.primary.full { width: 100%; margin-top: 8px; }
+
+/* preview media centered and responsive */
+.preview-media {
+  display: block;
+  margin: 10px auto;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* task list */
+.task-list { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-direction: column; gap: 12px; }
+.task-card { background: rgba(255,255,255,0.03); padding: 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.02); }
+.task-title { margin: 0 0 6px; font-size: 18px; }
+.task-desc { margin: 0 0 10px; color: var(--muted); }
+
+/* task actions */
+.task-actions { display: flex; gap: 8px; }
+.btn { padding: 8px 10px; border-radius: 8px; border: none; cursor: pointer; flex: 1; }
+.btn.edit { background: #0984e3; color: white; }
+.btn.delete { background: #d63031; color: white; }
+
+/* small responsive tweak */
+@media (max-width: 540px) {
+  :root { --card-w: 92vw; }
+  .card-inner { padding: 16px; }
+  .title { font-size: 20px; }
+}
+
+/* Make sure the .page container fills and centers properly */
+.page {
+  width: 100%;
+  max-width: 700px; /* optional to keep card centered */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Prevent left alignment inside any wrapper */
+/* Center card horizontally */
+.center-card {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.card-inner {
+  margin: 0 auto;
+}
+
